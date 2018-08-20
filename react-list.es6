@@ -189,7 +189,7 @@ module.exports = class ReactList extends Component {
     const {scrollParent} = this;
     const {axis} = this.props;
     offset += this.getOffset(this.getEl());
-    if (scrollParent === window) return window.scrollTo(0, offset);
+    if (scrollParent === window) return window.scrollTo({lef:0, top:offset,behavior:"smooth"});
 
     offset -= this.getOffset(this.scrollParent);
     scrollParent[SCROLL_START_KEYS[axis]] = offset;

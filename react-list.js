@@ -258,7 +258,7 @@
         var axis = this.props.axis;
 
         offset += this.getOffset(this.getEl());
-        if (scrollParent === window) return window.scrollTo(0, offset);
+        if (scrollParent === window) return window.scrollTo({left:0, top:offset,behavior:"smooth"});
 
         offset -= this.getOffset(this.scrollParent);
         scrollParent[SCROLL_START_KEYS[axis]] = offset;
